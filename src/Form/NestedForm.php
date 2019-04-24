@@ -123,7 +123,7 @@ class NestedForm
      */
     public function getKey()
     {
-        if ($this->model) {
+        if ($this->model && method_exists($this->model, 'getKey')) {
             return $this->model->getKey();
         }
     }
